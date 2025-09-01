@@ -1,7 +1,7 @@
 # mind-timer-web-app
 🧘 Meditation Timer
 
-To run this upp simply use:
+To run this app simply use:
  node ./index.js   
  and visit http://localhost:3000/
 
