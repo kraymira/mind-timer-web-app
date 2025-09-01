@@ -1,18 +1,20 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
 
+// Serve static files from a 'public' directory
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
 });
 
-// Add error handling
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
 
-// Start server with proper error handling
 const server = app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
   console.log(`Open http://localhost:${port} in your browser`);
@@ -24,7 +26,6 @@ const server = app.listen(port, () => {
   }
 });
 
-// Handle graceful shutdown
 process.on('SIGINT', () => {
   console.log('\nShutting down server...');
   server.close(() => {
@@ -32,3 +33,4 @@ process.on('SIGINT', () => {
     process.exit(0);
   });
 });
+
