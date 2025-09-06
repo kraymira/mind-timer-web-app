@@ -1,29 +1,49 @@
-# mind-timer-web-app
-🧘 Meditation Timer
+# Mind Timer Web App
 
-To run this app simply use:
- node ./index.js   
- and visit http://localhost:3000/
+A learning project where I'm figuring out how web development works. I'm a QA Automation Engineer exploring full-stack development by building a simple meditation timer app.
 
-A simple full-stack web app for tracking meditation sessions.
-Features include:
+## What I've Built So Far
 
-Start, pause, and reset meditation timer
+- Basic Express.js server that actually runs
+- Home page with HTML and CSS styling  
+- Timer page (just the HTML structure, no working timer yet)
+- Basic routing between pages (`/` and `/timer`)
+- Static file serving for CSS and images
+- Clean project structure with separated files
 
-Save sessions with category and notes
+## How to Run
 
-View personal session history
+```bash
+npm install
+node index.js
+# Visit http://localhost:3000
+```
 
-Basic user authentication (register/login)
+## What I'm Learning
 
-Mini analytics (total time, session count, average duration)
+- **Backend**: Node.js and Express.js basics
+- **Frontend**: HTML, CSS, and soon JavaScript
+- **File organization**: Keeping HTML, CSS, and server code separate
+- **Routing**: How URLs map to different pages
+- **Debugging**: What breaks and why (lots of trial and error!)
 
-Tech stack:
+## What's Next
 
-Frontend: HTML, CSS, JavaScript
+Planning to add:
+- Actually working timer functionality
+- Saving meditation sessions 
+- User login
+- Session history
+- Maybe a database (SQLite)
 
-Backend: Node.js, Express, SQLite
+## Tech Stack
 
-Testing: Jest (API), Playwright (E2E)
+- Node.js + Express.js
+- HTML, CSS, JavaScript (learning as I go)
+- SQLite (planned)
 
-Containerization: Docker
+## Why This Project?
+
+This lets me apply my testing mindset while learning how things actually work under the hood.
+
+**Current status**: Very basic but functional! The server runs, pages load, and I understand what each piece does.
