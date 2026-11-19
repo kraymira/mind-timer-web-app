@@ -1,49 +1,36 @@
 # Mind Timer Web App
 
-A learning project where I'm figuring out how web development works. I'm a QA Automation Engineer exploring full-stack development by building a simple meditation timer app.
+A personal JavaScript and Express learning project: a simple browser meditation timer with start, pause and reset controls.
 
-## What I've Built So Far
+## Current behavior
 
-- Basic Express.js server that actually runs
-- Home page with HTML and CSS styling  
-- Timer page (just the HTML structure, no working timer yet)
-- Basic routing between pages (`/` and `/timer`)
-- Static file serving for CSS and images
-- Clean project structure with separated files
+- Home page at `/` and timer page at `/timer`.
+- The timer counts elapsed time upward and displays minutes and seconds.
+- Start begins counting, pause keeps the elapsed value, and reset returns it to zero.
+- The start control is disabled while running to prevent multiple timer intervals.
 
-## How to Run
+## Run locally
+
+Requires Node.js and npm. From the repository root:
 
 ```bash
-npm install
+npm ci
 node index.js
-# Visit http://localhost:3000
 ```
 
-## What I'm Learning
+Open `http://localhost:3000/timer`. Stop the server with Ctrl+C. Run it from the repository root because the standalone entrypoint serves the relative `public/` directory.
 
-- **Backend**: Node.js and Express.js basics
-- **Frontend**: HTML, CSS, and soon JavaScript
-- **File organization**: Keeping HTML, CSS, and server code separate
-- **Routing**: How URLs map to different pages
-- **Debugging**: What breaks and why (lots of trial and error!)
+`index.js` is the entrypoint for the HTML timer demo described here. The repository also retains an older Express/Jade scaffold (`app.js`, `bin/www`); `npm start` currently selects that scaffold, so it is not the command for this timer demo.
 
-## What's Next
+## Repository map
 
-Planning to add:
-- Actually working timer functionality
-- Saving meditation sessions 
-- User login
-- Session history
-- Maybe a database (SQLite)
+- `index.js`: standalone server and HTML routes.
+- `views/index.html`, `views/timer.html`: browser pages.
+- `public/js/timer.js`: timer state and controls.
+- `public/css/`: page styles.
 
-## Tech Stack
+## Scope and next steps
 
-- Node.js + Express.js
-- HTML, CSS, JavaScript (learning as I go)
-- SQLite (planned)
+This is an early learning project, not a production application or a finished automation framework. It has no automated tests, persistence, accounts or session history. Elapsed time advances on browser interval callbacks; background throttling and reload recovery are not handled. Dependencies have not been modernized in this documentation update.
 
-## Why This Project?
-
-This lets me apply my testing mindset while learning how things actually work under the hood.
-
-**Current status**: Very basic but functional! The server runs, pages load, and I understand what each piece does.
+Future work: consolidate the two server entrypoints, add focused timer tests with a controlled clock, and make setup reproducible on a supported Node.js version. The deferred Playwright payment-checkout portfolio is a separate task.
